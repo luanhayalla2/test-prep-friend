@@ -365,16 +365,37 @@ function Detail({
   icon: "qty" | "split" | "edu";
   label: string;
 }) {
-  const glyphs: Record<string, string> = {
-    qty: "§Ã§",
-    split: "Ã¢",
-    edu: "Ã©",
-  };
   return (
     <span className="inline-flex items-center gap-1.5 text-muted-foreground">
-      <span className={`text-foreground`} aria-hidden>
-        {glyphs[icon]}
-      </span>
+      <svg
+        viewBox="0 0 16 16"
+        className="h-3.5 w-3.5 text-foreground"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        {icon === "qty" && (
+          <>
+            <rect x="2" y="3" width="12" height="10" rx="1.5" />
+            <path d="M5 6.5h6M5 9.5h4" />
+          </>
+        )}
+        {icon === "split" && (
+          <>
+            <path d="M2 4h5M2 8h5M2 12h5" />
+            <path d="M9 4h5M9 8h5M9 12h5" />
+          </>
+        )}
+        {icon === "edu" && (
+          <>
+            <path d="M8 2.5 2.5 5 8 7.5 13.5 5 8 2.5Z" />
+            <path d="M5 6.5v3c0 .8 1.3 1.5 3 1.5s3-.7 3-1.5v-3" />
+          </>
+        )}
+      </svg>
       <span>{label}</span>
     </span>
   );
