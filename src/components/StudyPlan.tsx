@@ -171,7 +171,7 @@ export function StudyPlan() {
             <p className="mt-1 text-sm text-muted-foreground">
               Prova em {exam.dateLabel} · {weeks.length}{" "}
               {weeks.length === 1 ? "semana" : "semanas"} de preparação ·{" "}
-              {split.general}% gerais / {split.specific}% específicas
+              {split.general} itens gerais / {split.specific} específicos
               {exam.general == null ? " (estimativa)" : " (proporção do edital)"}
             </p>
 
