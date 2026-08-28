@@ -26,8 +26,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Exam = never;
-
 type TimeLeft = {
   days: number;
   hours: number;
@@ -57,6 +55,8 @@ function Index() {
       <Hero />
       <main className="mx-auto max-w-6xl px-5 pb-24 sm:px-8">
         <ExamBoard />
+        <AlertSettings />
+        <StudyPlan />
         <Legend />
       </main>
       <Footer />
@@ -99,10 +99,16 @@ function Hero() {
             Ver as provas
           </a>
           <a
-            href="#legenda"
+            href="#alertas"
             className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
           >
-            Como ler este painel
+            Alertas
+          </a>
+          <a
+            href="#plano"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+          >
+            Plano de estudos
           </a>
         </div>
       </div>
