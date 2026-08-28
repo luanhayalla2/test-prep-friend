@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { EXAMS, accentMap, type Exam } from "@/lib/exams";
+import { AlertSettings } from "@/components/AlertSettings";
+import { StudyPlan } from "@/components/StudyPlan";
 
 export const Route = createFileRoute("/")({
   head: () => ({
