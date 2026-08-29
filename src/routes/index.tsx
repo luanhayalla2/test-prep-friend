@@ -114,6 +114,18 @@ function Hero() {
           >
             Plano de estudos
           </a>
+          <a
+            href="#aulas"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+          >
+            Aulas
+          </a>
+          <a
+            href="#simulados"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+          >
+            Simulados
+          </a>
         </div>
       </div>
     </header>
