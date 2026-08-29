@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { EXAMS, accentMap, type Exam } from "@/lib/exams";
 import { AlertSettings } from "@/components/AlertSettings";
 import { StudyPlan } from "@/components/StudyPlan";
+import { Lessons } from "@/components/Lessons";
+import { MockExams } from "@/components/MockExams";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,6 +57,8 @@ function Index() {
       <Hero />
       <main className="mx-auto max-w-6xl px-5 pb-24 sm:px-8">
         <ExamBoard />
+        <Lessons />
+        <MockExams />
         <AlertSettings />
         <StudyPlan />
         <Legend />
@@ -109,6 +113,18 @@ function Hero() {
             className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
           >
             Plano de estudos
+          </a>
+          <a
+            href="#aulas"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+          >
+            Aulas
+          </a>
+          <a
+            href="#simulados"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+          >
+            Simulados
           </a>
         </div>
       </div>
