@@ -10,13 +10,15 @@ function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    const tmp = a[i]!;
+    a[i] = a[j]!;
+    a[j] = tmp;
   }
   return a;
 }
 
 export function MockExams() {
-  const [examId, setExamId] = useState(EXAMS[0].id);
+  const [examId, setExamId] = useState(EXAMS[0]!.id);
   const [filter, setFilter] = useState<"todas" | "geral" | "especifica">("todas");
   const [answers, setAnswers] = useState<Answers>({});
   const [submitted, setSubmitted] = useState(false);
@@ -206,7 +208,7 @@ function QuestionCard({
 }: {
   index: number;
   question: Question;
-  selected?: number;
+  selected: number | undefined;
   submitted: boolean;
   accentSoft: string;
   onSelect: (i: number) => void;

@@ -4,7 +4,7 @@ import { LESSON_TRACKS, ytSearch, qcSearch } from "@/lib/lessons";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export function Lessons() {
-  const [examId, setExamId] = useState(EXAMS[0].id);
+  const [examId, setExamId] = useState(EXAMS[0]!.id);
   const { value: done, setValue: setDone } = useLocalStorage<
     Record<string, boolean>
   >("ma-aulas-concluidas", {});
