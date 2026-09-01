@@ -33,7 +33,7 @@ export function AccountBar() {
   const push = useCallback(async () => {
     setStatus("enviando…");
     try {
-      await saveUserState({ data: { data: readLocalSnapshot() } });
+      await saveUserState({ data: { json: JSON.stringify(readLocalSnapshot()) } });
       setStatus(`salvo ${new Date().toLocaleTimeString("pt-BR")}`);
     } catch (e) {
       setStatus(e instanceof Error ? e.message : "erro ao salvar");
@@ -48,8 +48,11 @@ export function AccountBar() {
       setStatus("sincronizando…");
       try {
         const remote = await getUserState();
-        if (remote.data && Object.keys(remote.data).length > 0) {
-          const changed = writeLocalSnapshot(remote.data);
+        const parsed = remote.json
+          ? (JSON.parse(remote.json) as Record<string, unknown>)
+          : null;
+        if (parsed && Object.keys(parsed).length > 0) {
+          const changed = writeLocalSnapshot(parsed);
           setStatus("progresso restaurado");
           if (changed) window.location.reload();
         } else {
