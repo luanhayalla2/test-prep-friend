@@ -5,6 +5,7 @@ import { AlertSettings } from "@/components/AlertSettings";
 import { StudyPlan } from "@/components/StudyPlan";
 import { Lessons } from "@/components/Lessons";
 import { MockExams } from "@/components/MockExams";
+import { AccountBar } from "@/components/AccountBar";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,6 +62,7 @@ function Index() {
         <MockExams />
         <AlertSettings />
         <StudyPlan />
+        <AccountBar />
         <Legend />
       </main>
       <Footer />
@@ -125,6 +127,12 @@ function Hero() {
             className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
           >
             Simulados
+          </a>
+          <a
+            href="#conta"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+          >
+            Conta
           </a>
         </div>
       </div>
