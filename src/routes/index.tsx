@@ -5,6 +5,7 @@ import { AlertSettings } from "@/components/AlertSettings";
 import { StudyPlan } from "@/components/StudyPlan";
 import { Lessons } from "@/components/Lessons";
 import { MockExams } from "@/components/MockExams";
+import { AccountBar } from "@/components/AccountBar";
 
 export const Route = createFileRoute("/")({
   head: () => ({
