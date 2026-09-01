@@ -62,6 +62,7 @@ function Index() {
         <MockExams />
         <AlertSettings />
         <StudyPlan />
+        <AccountBar />
         <Legend />
       </main>
       <Footer />
