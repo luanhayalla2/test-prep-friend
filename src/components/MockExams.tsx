@@ -492,7 +492,7 @@ function QuestionCard({
   selected: number | undefined;
   submitted: boolean;
   accentSoft: string;
-  srsLabel?: string;
+  srsLabel?: string | undefined;
   onSelect: (i: number) => void;
 }) {
   const letters = ["A", "B", "C", "D", "E"];
