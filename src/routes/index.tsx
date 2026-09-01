@@ -128,6 +128,12 @@ function Hero() {
           >
             Simulados
           </a>
+          <a
+            href="#conta"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+          >
+            Conta
+          </a>
         </div>
       </div>
     </header>
