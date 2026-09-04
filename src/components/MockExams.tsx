@@ -265,7 +265,15 @@ export function MockExams() {
           {mode === "completo" && questions.length > 0 && (
             <span className="text-muted-foreground">
               Tempo restante{" "}
-              <strong className="tabular-nums text-foreground">
+              <strong
+                className={`tabular-nums ${
+                  remaining === 0
+                    ? "text-terra"
+                    : remaining < 60000
+                      ? "text-terra"
+                      : "text-foreground"
+                }`}
+              >
                 {formatDuration(remaining)}
               </strong>
             </span>
@@ -303,6 +311,66 @@ export function MockExams() {
             </span>
           )}
         </div>
+
+        {/* progress bars (simulado completo) */}
+        {mode === "completo" && questions.length > 0 && !submitted && (
+          <div className="mt-3 space-y-3">
+            <div>
+              <div className="mb-1 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                <span>Progresso de questões</span>
+                <span className="tabular-nums">
+                  {answeredCount}/{questions.length}
+                </span>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                <div
+                  className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out"
+                  style={{
+                    width: `${questions.length ? (answeredCount / questions.length) * 100 : 0}%`,
+                  }}
+                />
+              </div>
+            </div>
+            <div>
+              <div className="mb-1 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                <span>Tempo</span>
+                <span className="tabular-nums">{formatDuration(remaining)}</span>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                <div
+                  className={`h-full rounded-full transition-[width] duration-1000 ease-linear ${
+                    remaining === 0
+                      ? "bg-terra"
+                      : remaining < 60000
+                        ? "bg-terra"
+                        : remaining < 300000
+                          ? "bg-amber-500"
+                          : "bg-foreground"
+                  }`}
+                  style={{
+                    width: `${
+                      totalTimeMs
+                        ? Math.min(100, (remaining / totalTimeMs) * 100)
+                        : 0
+                    }%`,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* time-up warning */}
+        {mode === "completo" && questions.length > 0 && !submitted && remaining === 0 && (
+          <div className="mt-3 flex items-center gap-3 rounded-lg border border-terra bg-terra/10 px-4 py-3 text-sm font-semibold text-foreground">
+            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-terra text-primary-foreground">
+              !
+            </span>
+            <span>
+              O tempo acabou! O simulado será corrigido automaticamente.
+            </span>
+          </div>
+        )}
 
         {/* report */}
         {report && <ReportPanel report={report} accentText={a.text} />}
@@ -497,6 +565,7 @@ function QuestionCard({
 }) {
   const letters = ["A", "B", "C", "D", "E"];
   const isRight = selected === question.answer;
+  const answered = selected !== undefined;
 
   return (
     <li className="rounded-xl border border-border bg-background/60 p-4 sm:p-5">
@@ -504,6 +573,12 @@ function QuestionCard({
         <span className="font-display text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Questão {index}
         </span>
+        <span
+          className={`inline-flex h-2 w-2 rounded-full ${
+            answered ? "bg-accent" : "bg-border"
+          }`}
+          aria-label={answered ? "Respondida" : "Não respondida"}
+        />
         <span
           className={`rounded-md px-2 py-0.5 font-display text-[10px] font-bold uppercase tracking-[0.12em] ${accentSoft}`}
         >
