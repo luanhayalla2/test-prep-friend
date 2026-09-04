@@ -565,6 +565,7 @@ function QuestionCard({
 }) {
   const letters = ["A", "B", "C", "D", "E"];
   const isRight = selected === question.answer;
+  const answered = selected !== undefined;
 
   return (
     <li className="rounded-xl border border-border bg-background/60 p-4 sm:p-5">
@@ -572,6 +573,12 @@ function QuestionCard({
         <span className="font-display text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Questão {index}
         </span>
+        <span
+          className={`inline-flex h-2 w-2 rounded-full ${
+            answered ? "bg-accent" : "bg-border"
+          }`}
+          aria-label={answered ? "Respondida" : "Não respondida"}
+        />
         <span
           className={`rounded-md px-2 py-0.5 font-display text-[10px] font-bold uppercase tracking-[0.12em] ${accentSoft}`}
         >
