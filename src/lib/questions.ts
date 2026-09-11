@@ -6,6 +6,8 @@ export type Question = {
   options: string[];
   answer: number; // index of correct option
   explanation: string;
+  provenance?: "autoral" | "oficial";
+  sourceLabel?: string;
 };
 
 export const QUESTIONS: Record<string, Question[]> = {
