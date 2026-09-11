@@ -53,8 +53,14 @@ export function MockExams() {
 
   const questions = useMemo(() => {
     if (mode === "completo") {
-      const geral = shuffle(pool.filter((q) => q.kind === "geral"));
-      const esp = shuffle(pool.filter((q) => q.kind === "especifica"));
+      const geral = shuffle(
+        pool.filter((q) => q.kind === "geral"),
+        `${examId}:${mode}:${seed}:geral`,
+      );
+      const esp = shuffle(
+        pool.filter((q) => q.kind === "especifica"),
+        `${examId}:${mode}:${seed}:especifica`,
+      );
       return [...geral, ...esp];
     }
     if (mode === "revisao") {
@@ -66,7 +72,7 @@ export function MockExams() {
     }
     const filtered =
       filter === "todas" ? pool : pool.filter((q) => q.kind === filter);
-    return shuffle(filtered);
+    return shuffle(filtered, `${examId}:${mode}:${filter}:${seed}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [examId, filter, seed, mode, pool]);
 
@@ -172,8 +178,8 @@ export function MockExams() {
             Simulados
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Prática livre, simulado cronometrado e revisão espaçada das questões
-            que você errou.
+            Questões autorais inéditas no estilo das provas, simulado cronometrado
+            e revisão espaçada.
           </p>
         </div>
         <span className="hidden sm:block font-display text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -182,6 +188,12 @@ export function MockExams() {
       </div>
 
       <div className="mt-6 rounded-2xl border border-border bg-card p-5 sm:p-6">
+        <div className="mb-5 border-l-2 border-accent bg-accent/10 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Banco autoral:</strong> as questões e
+          os gabaritos comentados são inéditos e seguem o estilo e o conteúdo dos
+          concursos. Gabaritos oficiais de 2026 serão identificados somente após
+          a publicação pelas bancas.
+        </div>
         {/* exam picker */}
         <div className="flex flex-wrap gap-2">
           {EXAMS.map((e) => {
@@ -592,6 +604,9 @@ function QuestionCard({
             {srsLabel}
           </span>
         )}
+        <span className="rounded-md border border-accent/40 bg-accent/10 px-2 py-0.5 font-display text-[10px] font-semibold uppercase tracking-[0.12em] text-foreground">
+          {question.provenance === "oficial" ? "Gabarito oficial" : question.sourceLabel}
+        </span>
       </div>
 
       <p className="mt-3 text-sm leading-relaxed text-foreground">
@@ -635,6 +650,11 @@ function QuestionCard({
               : "Resposta correta: " + letters[question.answer] + ". "}
           </strong>
           {question.explanation}
+          <div className="mt-2 border-t border-border pt-2 font-semibold text-foreground">
+            {question.provenance === "oficial"
+              ? `Fonte oficial: ${question.sourceLabel ?? "banca organizadora"}`
+              : "Gabarito autoral comentado — não é uma questão oficial de 2026."}
+          </div>
         </div>
       )}
     </li>

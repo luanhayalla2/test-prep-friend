@@ -1,6 +1,6 @@
 import type { Question } from "./questions";
 
-/** Terceiro lote de questões inéditas, no estilo das bancas, por matéria e concurso. */
+/** Terceiro lote de questões autorais inéditas, no estilo das provas, por matéria e concurso. */
 export const MORE_QUESTIONS: Record<string, Question[]> = {
   pmma: [
     {
@@ -306,13 +306,13 @@ export const MORE_QUESTIONS: Record<string, Question[]> = {
       kind: "geral",
       statement: "Assinale a alternativa em que o uso do pronome demonstrativo está correto quanto à referência espacial.",
       options: [
-        "Este documento que está com você é o original.",
-        "Esse relatório aqui na minha mesa precisa de assinatura.",
-        "Aquele processo que estou segurando será arquivado.",
-        "Este pedido que você tem em mãos foi deferido.",
+        "Esse documento aqui comigo é o original.",
+        "Este relatório aqui na minha mesa precisa de assinatura.",
+        "Aquele processo que você está segurando será arquivado.",
+        "Este pedido que está lá no arquivo foi deferido.",
       ],
       answer: 1,
-      explanation: "\"Esse\" refere-se ao que está próximo do interlocutor — mas \"aqui na minha mesa\" indicaria \"este\". Analisando: a única correta é a opção em que \"este\" acompanha o que está próximo do falante. Corrigindo: as alternativas A, C e D invertem a referência; a resposta que mantém coerência é a B apenas se lida do ponto de vista do interlocutor. Regra: este = perto de quem fala; esse = perto de quem ouve; aquele = longe de ambos.",
+      explanation: "\"Este\" indica algo próximo de quem fala, por isso combina com \"aqui na minha mesa\". Usa-se \"esse\" para o que está perto do interlocutor e \"aquele\" para o que está longe de ambos.",
     },
     {
       id: "tcema-m2",
