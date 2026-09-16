@@ -11,6 +11,7 @@ export function getQuestions(examId: string): Question[] {
     ...(QUESTIONS[examId] ?? []),
     ...(EXTRA_QUESTIONS[examId] ?? []),
     ...(MORE_QUESTIONS[examId] ?? []),
+    ...(BATCH4_QUESTIONS[examId] ?? []),
   ].map((question) => ({
     provenance: "autoral" as const,
     sourceLabel: "Inédita · estilo da prova",
