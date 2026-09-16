@@ -1,6 +1,7 @@
 import { QUESTIONS, type Question } from "./questions";
 import { EXTRA_QUESTIONS } from "./questions-extra";
 import { MORE_QUESTIONS } from "./questions-more";
+import { BATCH4_QUESTIONS } from "./questions-batch4";
 
 export type { Question };
 
