@@ -6,4 +6,5 @@
 - [x] Evitar troca aleatória da ordem durante o carregamento inicial.
 - [x] Quarto lote de 57 questões inéditas conectado ao banco.
 - [x] Quinto lote de 40 questões inéditas conectado ao banco.
+- [x] Sexto lote de 40 questões inéditas conectado ao banco.
 - [ ] Após as provas de 2026: incorporar questões e gabaritos oficiais publicados pelas bancas, com fonte e data de consulta.
