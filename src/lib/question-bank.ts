@@ -4,6 +4,7 @@ import { MORE_QUESTIONS } from "./questions-more";
 import { BATCH4_QUESTIONS } from "./questions-batch4";
 import { BATCH5_QUESTIONS } from "./questions-batch5";
 import { BATCH6_QUESTIONS } from "./questions-batch6";
+import { BATCH7_QUESTIONS } from "./questions-batch7";
 
 export type { Question };
 
@@ -16,6 +17,7 @@ export function getQuestions(examId: string): Question[] {
     ...(BATCH4_QUESTIONS[examId] ?? []),
     ...(BATCH5_QUESTIONS[examId] ?? []),
     ...(BATCH6_QUESTIONS[examId] ?? []),
+    ...(BATCH7_QUESTIONS[examId] ?? []),
   ].map((question) => ({
     provenance: "autoral" as const,
     sourceLabel: "Inédita · estilo da prova",

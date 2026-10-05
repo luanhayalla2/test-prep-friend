@@ -7,4 +7,5 @@
 - [x] Quarto lote de 57 questões inéditas conectado ao banco.
 - [x] Quinto lote de 40 questões inéditas conectado ao banco.
 - [x] Sexto lote de 40 questões inéditas conectado ao banco.
+- [x] Sétimo lote de 40 questões inéditas conectado ao banco.
 - [ ] Após as provas de 2026: incorporar questões e gabaritos oficiais publicados pelas bancas, com fonte e data de consulta.
