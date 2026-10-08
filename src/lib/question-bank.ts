@@ -6,6 +6,7 @@ import { BATCH5_QUESTIONS } from "./questions-batch5";
 import { BATCH6_QUESTIONS } from "./questions-batch6";
 import { BATCH7_QUESTIONS } from "./questions-batch7";
 import { BATCH8_QUESTIONS } from "./questions-batch8";
+import { BATCH9_QUESTIONS } from "./questions-batch9";
 
 export type { Question };
 
@@ -20,6 +21,7 @@ export function getQuestions(examId: string): Question[] {
     ...(BATCH6_QUESTIONS[examId] ?? []),
     ...(BATCH7_QUESTIONS[examId] ?? []),
     ...(BATCH8_QUESTIONS[examId] ?? []),
+    ...(BATCH9_QUESTIONS[examId] ?? []),
   ].map((question) => ({
     provenance: "autoral" as const,
     sourceLabel: "Inédita · estilo da prova",
