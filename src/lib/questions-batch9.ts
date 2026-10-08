@@ -14,7 +14,7 @@ const q = (
 /** Nono lote de questões autorais inéditas, no estilo das provas. */
 export const BATCH9_QUESTIONS: Record<string, Question[]> = {
   pmma: [
-    q("pmma-t1", "Língua Portuguesa", "geral", "Assinale a alternativa em que a crase está corretamente empregada.", ["Vou à reunião do batalhão.", "Cheguei à casa cedo.", "Refiro-me à ele.", "Saí à uma hora."], 0, "Crase before feminine noun determined: \"à reunião\". Não há crase antes de pronome (\"a ele\") nem antes de palavra repetida (\"cara a cara\"); \"a uma hora\" não leva crase."),
+    q("pmma-t1", "Língua Portuguesa", "geral", "Assinale a alternativa em que a crase está corretamente empregada.", ["Vou à reunião do batalhão.", "Cheguei à casa cedo.", "Refiro-me à ele.", "Saí à uma hora."], 0, "Crase antes de substantivo feminino determinado: \"à reunião\". Não há crase antes de pronome (\"a ele\") nem antes de hora com \"uma\" (\"a uma hora\")."),
     q("pmma-t2", "Língua Portuguesa", "geral", "Em \"O policial que agiu corretamente foi elogiado\", a oração destacada é:", ["Subordinada substantiva", "Subordinada adjetiva restritiva", "Subordinada adjetiva explicativa", "Coordenada conclusiva"], 1, "A oração \"que agiu corretamente\" funciona como adjetivo com valor restritivo (limita o antecedente), sem vírgulas."),
     q("pmma-t3", "Matemática", "geral", "Se 20% de um valor é R$ 240, o valor total é:", ["R$ 960", "R$ 1.100", "R$ 1.200", "R$ 2.400"], 2, "0,20 × X = 240 → X = 240 ÷ 0,20 = R$ 1.200."),
     q("pmma-t4", "Matemática", "geral", "Um jipe percorre 180 km em 2 horas e 30 minutos. Sua velocidade média é:", ["66 km/h", "70 km/h", "72 km/h", "80 km/h"], 2, "v = 180 ÷ 2,5 = 72 km/h."),
