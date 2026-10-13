@@ -10,4 +10,5 @@
 - [x] Sétimo lote de 40 questões inéditas conectado ao banco.
 - [x] Oitavo lote de 40 questões inéditas conectado ao banco.
 - [x] Nono lote de 40 questões inéditas conectado ao banco.
-- [ ] Após as provas de 2026: incorporar questões e gabaritos oficiais publicados pelas bancas, com fonte e data de consulta.
+- [ ] Após as provas de 2026: incorporar questões e gabaritos oficiais publicados pelas bancas, com fonte e data de consulta.- [x] Modo "Certo ou Errado" (estilo Cebraspe, erro anula acerto).
+- [ ] A partir de 16/10/2026: incluir questões e gabarito oficial da PMMA (Cebraspe), com fonte e data.
