@@ -77,14 +77,24 @@ function Hero() {
     <header className="relative overflow-hidden border-b border-border bg-grid">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
       <div className="relative mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <div className="flex items-center gap-2.5">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-pulse-dot absolute inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
-          </span>
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Edital 2026 · Maranhão
-          </span>
+        <div className="flex items-center gap-3.5">
+          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-border bg-card/80 p-2 shadow-sm backdrop-blur-sm transition-transform hover:scale-105">
+            <img src="/favicon.svg" alt="Test Prep Friend Ícone" className="h-full w-full object-contain" />
+          </div>
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-pulse-dot absolute inline-flex h-2 w-2 rounded-full bg-accent" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              </span>
+              <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-accent">
+                Test Prep Friend
+              </span>
+            </div>
+            <span className="font-display text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              Edital 2026 · Maranhão
+            </span>
+          </div>
         </div>
 
         <h1 className="text-display mt-6 text-4xl font-bold leading-[1.02] sm:text-6xl">

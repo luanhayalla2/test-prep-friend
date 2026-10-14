@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f242d" />
+      <stop offset="100%" stop-color="#11141a" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="50%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#ea580c" flood-opacity="0.35" />
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Fundo Squircle Suave -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bgGrad)" stroke="#2e3543" stroke-width="6" />
+
+  <!-- Detalhe sutil de grid/círculo de foco -->
+  <circle cx="256" cy="256" r="170" fill="none" stroke="#2a313d" stroke-width="2" stroke-dasharray="6 8" />
+
+  <!-- Grupo Principal do Ícone com Sombra -->
+  <g filter="url(#glow)">
+    <!-- Base do Capelo / Livro Aberto Concurseiro -->
+    <!-- Capelo Superior (Losango com perspectiva) -->
+    <path d="M 256 120 L 416 198 L 256 276 L 96 198 Z" fill="url(#accentGrad)" filter="url(#softShadow)" />
+    
+    <!-- Linha de detalhe no capelo -->
+    <path d="M 256 142 L 382 203 L 256 264 L 130 203 Z" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="3" />
+
+    <!-- Corpo inferior do capelo (cranio) -->
+    <path d="M 166 235 L 166 288 C 166 332 206 362 256 362 C 306 362 346 332 346 288 L 346 235 L 312 252 C 300 274 280 288 256 288 C 232 288 212 274 200 252 Z" fill="#b91c1c" opacity="0.95" />
+    <path d="M 176 242 C 196 270 224 284 256 284 C 288 284 316 270 336 242 C 322 284 292 312 256 312 C 220 312 190 284 176 242 Z" fill="url(#accentGrad)" />
+
+    <!-- Cordão / Pingente (Tassel) -->
+    <path d="M 256 198 Q 230 230 216 270" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" />
+    <circle cx="256" cy="198" r="9" fill="url(#goldGrad)" />
+    <!-- Pompom / Pêndulo do cordão -->
+    <path d="M 216 270 L 210 326 C 210 332 222 332 222 326 L 216 270 Z" fill="url(#goldGrad)" filter="url(#softShadow)" />
+  </g>
+
+  <!-- Medalha / Alvo de Concurso na parte inferior -->
+  <g transform="translate(256, 380)" filter="url(#softShadow)">
+    <!-- Base dourada -->
+    <circle cx="0" cy="0" r="42" fill="url(#goldGrad)" stroke="#11141a" stroke-width="5" />
+    <!-- Círculo interno -->
+    <circle cx="0" cy="0" r="32" fill="#1f242d" />
+    <!-- Estrela da Aprovação -->
+    <path d="M 0 -22 L 6.5 -7 L 22 -5 L 10.5 6 L 13.5 21 L 0 13.5 L -13.5 21 L -10.5 6 L -22 -5 L -6.5 -7 Z" fill="url(#goldGrad)" />
+  </g>
+</svg>
